@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/memberListFragment">
+
+    <fragment
+        android:id="@+id/memberDetailsFragment"
+        android:name="com.example.transformapp.ui.member.MemberDetailsFragment"
+        android:label="MemberDetailsFragment" >
+        <action
+            android:id="@+id/action_memberDetailsFragment_to_memberListFragment"
+            app:destination="@id/memberListFragment" />
+        <argument
+            android:name="memberId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_memberDetailsFragment_to_trainingListFragment"
+            app:destination="@id/trainingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberListFragment"
+        android:name="com.example.transformapp.ui.member.MemberListFragment"
+        android:label="MemberListFragment" >
+        <action
+            android:id="@+id/action_memberListFragment_to_memberDetailsFragment"
+            app:destination="@id/memberDetailsFragment" />
+        <action
+            android:id="@+id/action_memberListFragment_to_newMemberFragment"
+            app:destination="@id/newMemberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newMemberFragment"
+        android:name="com.example.transformapp.ui.member.NewMemberFragment"
+        android:label="NewMemberFragment" >
+        <action
+            android:id="@+id/action_newMemberFragment_to_memberListFragment"
+            app:destination="@id/memberListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTrainingFragment"
+        android:name="com.example.transformapp.ui.training.NewTrainingFragment"
+        android:label="NewTrainingFragment" >
+        <action
+            android:id="@+id/action_newTrainingFragment_to_trainingListFragment"
+            app:destination="@id/trainingListFragment" />
+        <argument
+            android:name="memberId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingDetailsFragment"
+        android:name="com.example.transformapp.ui.training.TrainingDetailsFragment"
+        android:label="TrainingDetailsFragment" >
+        <action
+            android:id="@+id/action_trainingDetailsFragment_to_trainingListFragment"
+            app:destination="@id/trainingListFragment" />
+        <argument
+            android:name="trainingId"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/trainingListFragment"
+        android:name="com.example.transformapp.ui.training.TrainingListFragment"
+        android:label="TrainingListFragment" >
+        <action
+            android:id="@+id/action_trainingListFragment_to_trainingDetailsFragment"
+            app:destination="@id/trainingDetailsFragment" />
+        <action
+            android:id="@+id/action_trainingListFragment_to_newTrainingFragment"
+            app:destination="@id/newTrainingFragment" />
+        <action
+            android:id="@+id/action_trainingListFragment_to_memberDetailsFragment"
+            app:destination="@id/memberDetailsFragment" />
+        <argument
+            android:name="memberId"
+            app:argType="string"/>
+    </fragment>
+</navigation>
